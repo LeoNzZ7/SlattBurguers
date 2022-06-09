@@ -50,9 +50,50 @@ export const MenuArea = styled.div`
 export const acountArea = styled.div`
     display: flex;
     align-items: center;
-   
-    .icon {
+
+    button {
+        background-color: transparent;
+        border: 0;
+        color: #FFF;
+
+        .icon {
         margin: 0px 10px;
         cursor: pointer;
+        };
+    };
+
+    .account-menu {
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 60px;
+        right: 40px;
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-weight: bold;
+        width: 180px;
+        justify-content: start;
+        font-size: 20px;
+        border-radius: 10px;
+
+        a {
+            text-decoration: none;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 10px 10px 0px 0px;
+
+            &:last-child {
+                border-radius: 0px 0px 10px 10px;
+            }
+
+            &:hover {
+                background-color: #FFA500;
+            };
+        };
+
+        .icon {
+            margin-right: 5px; 
+            padding-top: 10px;
+        };
     };
 `;
