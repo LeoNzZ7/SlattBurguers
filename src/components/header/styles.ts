@@ -80,7 +80,10 @@ export const acountArea = styled.div`
             text-decoration: none;
             color: #FFF;
             padding: 10px;
-            border-radius: 10px 10px 0px 0px;
+           
+            &:first-child {
+                border-radius: 10px 10px 0px 0px;
+            }
 
             &:last-child {
                 border-radius: 0px 0px 10px 10px;

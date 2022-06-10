@@ -67,7 +67,7 @@ export const RegisterArea = styled.div<{formType: 'login' | 'register'}>`
         };
     };
 
-    button {
+    .button {
         height: 40px;
         width: 45%;
         border: 0;
@@ -122,7 +122,7 @@ export const LoginArea = styled.div<{formType: 'login' | 'register'}>`
         };
     };
 
-    button {
+    .button {
         height: 40px;
         width: 45%;
         border: 0;

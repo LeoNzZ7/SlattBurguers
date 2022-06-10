@@ -1,10 +1,34 @@
 import * as c from './styles';
-import { useState } from 'react';
+import { FormEvent, FormEventHandler, FormHTMLAttributes, useState } from 'react';
 import { Envelope, LockKey, User } from 'phosphor-react';
+import { useDispatch } from 'react-redux';
+import { setLoggedStatus } from '../../redux/reducers/loggedReducer';
+import { useNavigate } from 'react-router-dom';
 
 export const FormPage = () => {
     const [formType, setFormType] = useState<'login' | 'register'>('login')
-    
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleRegister = (event: FormEvent<HTMLInputElement>) => {
+        event.preventDefault();
+
+        dispatch(setLoggedStatus(true));
+        navigate('/');
+    };
+
+    const handleLogin = (event: FormEvent<HTMLInputElement>) => {
+
+        dispatch(setLoggedStatus(true));
+        navigate('/');
+    };
+
     return (
         <c.FormPage>
             <c.LoginArea formType={formType} >
@@ -19,7 +43,7 @@ export const FormPage = () => {
                                 <LockKey className='icon' size={35} />
                                 <input type='password' placeholder='Digite sua senha' required />
                             </label>
-                            <button>Entrar</button>
+                            <input type='submit' className='button' onClick={handleLogin} value='Entrar' />
                         </form>
                    } {formType !== 'login' &&
                     <c.ChangeFormType>
@@ -60,7 +84,7 @@ export const FormPage = () => {
                             <LockKey className='icon' size={35} />
                             <input type='password' required placeholder='Confirme a senha' />
                         </label>
-                        <button>Criar conta</button>
+                        <input type='submit' className='button' onClick={handleRegister} value='Criar conta' />
                     </form>
                 }
             </c.RegisterArea>
