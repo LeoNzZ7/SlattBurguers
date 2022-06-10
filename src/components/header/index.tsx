@@ -32,7 +32,7 @@ export const Header = () => {
                     <Menu.Items className='account-menu' >
                         <Menu.Item>
                             {({active}) => (
-                                <Link to='/'>
+                                <Link to='/form'>
                                     <User className='icon' size={28} weight="bold" />
                                     Minha Conta    
                                 </Link>

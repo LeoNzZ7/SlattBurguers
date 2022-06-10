@@ -6,6 +6,7 @@ export const Home = styled.div`
     background-size: cover;
     background-position: center;
     height: 100vh;
+    overflow: hidden;
 `;
 
 export const homeArea = styled.div`
