@@ -4,9 +4,11 @@ import { Envelope, LockKey, User } from 'phosphor-react';
 import { useDispatch } from 'react-redux';
 import { setLoggedStatus } from '../../redux/reducers/loggedReducer';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../redux/hooks/useAppSelector';
+import { setFormType } from '../../redux/reducers/formTypeReducer';
 
 export const FormPage = () => {
-    const [formType, setFormType] = useState<'login' | 'register'>('login')
+    const form = useAppSelector(state => state.type)
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -31,8 +33,8 @@ export const FormPage = () => {
 
     return (
         <c.FormPage>
-            <c.LoginArea formType={formType} >
-                   {formType === 'login' && 
+            <c.LoginArea formType={form.type} >
+                   {form.type === 'login' && 
                         <form>
                             <h1>Entre com a sua conta</h1>
                             <label>
@@ -45,22 +47,22 @@ export const FormPage = () => {
                             </label>
                             <input type='submit' className='button' onClick={handleLogin} value='Entrar' />
                         </form>
-                   } {formType !== 'login' &&
+                   } {form.type !== 'login' &&
                     <c.ChangeFormType>
                         <h1>Já tem uma conta?</h1>
                         <p>Clique no botão abaixo e entre com a sua conta</p>
-                        <button onClick={e => setFormType(formType === 'register' ? 'login' : 'register')} >Entre com a sua conta</button>
+                        <button onClick={e => dispatch(setFormType('login'))} >Entre com a sua conta</button>
                     </c.ChangeFormType>
                    }
             </c.LoginArea>
-            <c.RegisterArea formType={formType} >
-               {formType === 'login' &&
+            <c.RegisterArea formType={form.type} >
+               {form.type === 'login' &&
                 <c.ChangeFormType>
                     <h1>Não tem uma conta ainda?</h1>
                     <p>Clique no botão abaixo e crie sua conta</p>
-                    <button onClick={e => setFormType(formType === 'login' ? 'register' : 'login')} >Crie sua conta</button>
+                    <button onClick={e => dispatch(setFormType('register'))} >Crie sua conta</button>
                 </c.ChangeFormType>
-                } {formType === 'register' &&
+                } {form.type === 'register' &&
                     <form>
                         <div className='inputName' >
                             <label>

@@ -5,6 +5,7 @@ import { Popover, Menu } from '@headlessui/react';
 import { useAppSelector } from '../../redux/hooks/useAppSelector';
 import { useDispatch } from 'react-redux';
 import { setLoggedStatus } from '../../redux/reducers/loggedReducer';
+import { setFormType } from '../../redux/reducers/formTypeReducer';
 
 export const Header = () => {
     const logged = useAppSelector(state => state.logged)
@@ -71,7 +72,7 @@ export const Header = () => {
                         <Menu.Items className='account-menu' >
                             <Menu.Item>
                                 {({active}) => (
-                                    <Link to='/form'>
+                                    <Link to='/form' onClick={e => dispatch(setFormType('register'))}>
                                         <UserPlus className='icon' size={28} weight="bold" />
                                         Criar conta
                                     </Link>
@@ -79,7 +80,7 @@ export const Header = () => {
                             </Menu.Item>
                             <Menu.Item>
                                 {({active}) => (
-                                    <Link to='/form'>
+                                    <Link to='/form' onClick={e => dispatch(setFormType('login'))}>
                                         <SignIn className='icon' size={28} weight="bold" />
                                         Entrar
                                     </Link>

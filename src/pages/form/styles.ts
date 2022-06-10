@@ -9,7 +9,7 @@ export const FormPage = styled.div`
     display: flex;
 `;
 
-export const RegisterArea = styled.div<{formType: 'login' | 'register'}>`
+export const RegisterArea = styled.div<{formType: string}>`
     background-color: ${props => props.formType === 'login' ? '#FFA500' : '#FFF'};
     width: ${props => props.formType === 'login' ? '60%' : '40%'};
     display: flex;
@@ -83,7 +83,7 @@ export const RegisterArea = styled.div<{formType: 'login' | 'register'}>`
     };
 `;
 
-export const LoginArea = styled.div<{formType: 'login' | 'register'}>`
+export const LoginArea = styled.div<{formType: string}>`
     background-color: ${props => props.formType === 'login' ? '#FFF' : '#FFA500'};
     width: ${props => props.formType === 'login' ? '40%' : '60%'};
     display: flex;

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import loggedReducer from "./reducers/loggedReducer";
+import formTypeReducer from "./reducers/formTypeReducer";
 
 export const store = configureStore({
     reducer: {
-        logged: loggedReducer
+        logged: loggedReducer,
+        type: formTypeReducer
     }
 });
 
