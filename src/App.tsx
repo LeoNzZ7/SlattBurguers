@@ -14,8 +14,8 @@ const App = () => {
             </c.Header>
           </c.homeArea>
         </c.Home>
-        <PublicRoutes/>
       </div>
+      <PublicRoutes/>
     </BrowserRouter>
   );
 };
