@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import burgue from './assets/burgue.jpeg'
+import burgue from '../../assets/burgue.jpeg'
 
 export const Home = styled.div`
     background-image: url(${burgue});

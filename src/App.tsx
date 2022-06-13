@@ -1,21 +1,18 @@
-import * as c from './app.styles';
-import { Header } from './components/header';
 import { BrowserRouter } from 'react-router-dom';
+import { useAppSelector } from './redux/hooks/useAppSelector';
 import { PublicRoutes } from './routes/public.routes';
+import { PrivateRoutes } from './routes/private.routes';
 
 const App = () => {
+  const logged = useAppSelector(state => state.logged.status);
+
   return(
     <BrowserRouter>
-      <div>
-        <c.Home>
-          <c.homeArea>
-            <c.Header>
-              <Header/>
-            </c.Header>
-          </c.homeArea>
-        </c.Home>
-      </div>
-      <PublicRoutes/>
+      {!logged &&
+        <PublicRoutes/>
+      } {logged &&
+        <PrivateRoutes/>
+      }
     </BrowserRouter>
   );
 };
