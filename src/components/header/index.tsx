@@ -1,14 +1,14 @@
 import * as c from './styles';
-import { Bag, Hamburger, ShoppingCart, SignIn, SignOut, User, UserCircle, UserPlus } from 'phosphor-react';
+import { Bag, Hamburger, ShoppingCart, SignIn, SignOut, Trash, User, UserCircle, UserPlus } from 'phosphor-react';
 import { Link } from 'react-router-dom';
-import { Popover, Menu } from '@headlessui/react';
+import { Menu } from '@headlessui/react';
 import { useAppSelector } from '../../redux/hooks/useAppSelector';
 import { useDispatch } from 'react-redux';
 import { setLoggedStatus } from '../../redux/reducers/loggedReducer';
 import { setFormType } from '../../redux/reducers/formTypeReducer';
 
 export const Header = () => {
-    const logged = useAppSelector(state => state.logged)
+    const logged = useAppSelector(state => state.logged.status)
     const dispatch = useDispatch();
     
     return(
@@ -35,13 +35,26 @@ export const Header = () => {
                 }
             </c.MenuArea>
             <c.acountArea>
-                <Popover>
-                    <Popover.Panel>Carrinho</Popover.Panel>
-                    <Popover.Button>
+                <Menu>
+                    <Menu.Button>
                         <ShoppingCart className='icon' size={40}/>
-                    </Popover.Button>
-                </Popover>
-                {logged.status === true &&
+                    </Menu.Button>
+                    <Menu.Items  className='cart-menu'>
+                        <Menu.Item>
+                            {({active}) => (
+                                <table>
+                                    <tr>
+                                        <td>Nome</td>
+                                        <td>Foto</td>
+                                        <td>Quantidade</td>
+                                        <td>Valor</td>
+                                    </tr>
+                                </table>
+                            )}
+                        </Menu.Item>
+                    </Menu.Items>
+                </Menu>
+                {logged &&
                     <Menu>
                         <Menu.Button>
                             <UserCircle className='icon' size={40}/>
@@ -73,7 +86,7 @@ export const Header = () => {
                             </Menu.Item>
                         </Menu.Items>
                     </Menu>
-                } {logged.status === false &&
+                } {!logged &&
                     <Menu>
                         <Menu.Button>
                             <UserCircle className='icon' size={40}/>

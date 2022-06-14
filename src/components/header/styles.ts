@@ -62,6 +62,35 @@ export const acountArea = styled.div`
         };
     };
 
+    .cart-menu {
+        width: 600px;
+        background-color: rgba(20, 20, 20, 0.5);
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-weight: bold;
+        justify-content: start;
+        font-size: 20px;
+        border: 3px solid #222;
+        padding: 10px;
+
+        table {
+            tr {
+                border: 2px solid #222;
+                border-radius: 10px;
+
+                td {
+                    padding: 10px 25px;
+                    width: 20%;
+                };
+            };
+        };
+    };
+
     .account-menu {
         background-color: rgba(0, 0, 0, 0.4);
         position: absolute;
