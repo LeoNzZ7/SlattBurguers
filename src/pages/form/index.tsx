@@ -11,7 +11,6 @@ export const FormPage = () => {
     const form = useAppSelector(state => state.type);
 
     type AccountInfoType = {
-        id?: number,
         email: string,
         firstName: string,
         lastName?: string,
@@ -19,7 +18,7 @@ export const FormPage = () => {
     };
 
     const [AccountData, setAccountData] = useState<AccountInfoType[]>([
-        {id: 0, email: 'leonardomartinha@gmail.com', firstName: 'Leonardo', lastName: 'Nunes Martinha', password: '123'}
+        {email: 'leonardomartinha@gmail.com', firstName: 'Leonardo', lastName: 'Nunes Martinha', password: '123'}
     ]);
 
     const [firstName, setFirstName] = useState('');
@@ -39,15 +38,25 @@ export const FormPage = () => {
             for(let i in AccountData) {
                 if(email !== AccountData[i].email) {
                     if(password === confirmPassword) {
+                        let newUser: AccountInfoType = {
+                            email,
+                            firstName,
+                            lastName,
+                            password
+                        }
+                        let newItem: AccountInfoType[] = [...AccountData];
+                        newItem.push(newUser);
+                        setAccountData(newItem);
                         
-
-
+                                   
                     } else {
-                        setWarning('As senha não coincidem')
+                        setWarning('As senha não coincidem');
+                        alert(warning);
                     }
                 } else {
-                    setWarning('Email ja cadastrado')
-                }
+                    setWarning('Email ja cadastrado');
+                    alert(warning);
+                };
             };
         };
     };
@@ -62,13 +71,18 @@ export const FormPage = () => {
                         dispatch(setLoggedStatus(true));
                         navigate('/');
                     } else {
-                        setWarning('Senha incorreta')
+                        setWarning('Senha incorreta');
+                        alert(warning);
                     };
                 } else {
-                    setWarning('Email incorreto')
+                    setWarning('Email incorreto');
+                    alert(warning);
                 };
             };
-        };
+        } else {
+            setWarning('Preencha todos os campos');
+            alert(warning);
+        }
     };
 
     const handleChangeFormType = () => {
