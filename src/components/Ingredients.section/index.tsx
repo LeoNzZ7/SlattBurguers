@@ -1,18 +1,21 @@
 import * as c from './styles';
-import burgue from '../../assets/burgue2.png'
+import burgue from '../../assets/burgue2.png';
+import { useNavigate } from 'react-router-dom';
 
 export const Ingredients = () => {
+    const navigate = useNavigate();
+    
     return (
         <c.Container>
             <c.imageArea>
                 <img src={burgue} />
             </c.imageArea>
             <c.infoArea>
-                <h1>Ingredientes</h1>
+                <h1>Com o que são feitos?</h1>
                 <ul>
                     <li>
-                        <h1>hambúrgueres</h1>
-                        <p>hambúrgueres feitos com carne de primeira sendo 80% carne e 20% gordura</p>
+                        <h1>Hambúrgueres</h1>
+                        <p>Hambúrgueres feitos com carne de primeira sendo 80% carne e 20% gordura</p>
                     </li>
                     <li>
                         <h1>Vegetais</h1>
@@ -27,6 +30,7 @@ export const Ingredients = () => {
                         <p>Nossos condimentos são feitos com uma fórmula especial de nossa  empressa</p>
                     </li>
                 </ul>
+                <button onClick={e => navigate('/menu')}>Cárdapio</button>
             </c.infoArea>
         </c.Container>
     )

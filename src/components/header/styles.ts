@@ -41,6 +41,7 @@ export const MenuArea = styled.div`
 
                 &:hover {
                     border-bottom: 3px solid #FFA500;
+                    color: #EEE;
                 };
             };
         };  

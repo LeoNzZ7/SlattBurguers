@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const imageArea = styled.div`
-    height: 100vh;
+    height: 100%;
     width: 600px;
     background-color: #000;
     display: flex;
@@ -17,30 +17,43 @@ export const imageArea = styled.div`
 
     img {
         width: auto;
-        height: 100%;
+        height: 95%;
     };
 `;
 
 export const infoArea = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     background-color: #000;
-    padding-top: 50px;
     flex: 2;
     font-weight: bold;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
 
     h1 {
         color: #FFA500;
-    }
+    };
 
     ul {
         width: 80%;
-        padding: 35px 0px;
-    }
+    };
 
     li {
-        padding: 15px 0px;
+        padding: 10px 0px;
         color: #FFF;
+    };
+
+    button {
+        width: 300px;
+        height: 50px;
+        background-color: #FFA500;
+        border-radius: 30px;
+        cursor:pointer;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #EE9400;
+        };
+    };
 `;
