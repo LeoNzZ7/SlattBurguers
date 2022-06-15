@@ -10,20 +10,94 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.div`
-    width: 45%;
+    width: 50%;
     background-size: cover;
     background-position: center;
     border-left: 3px solid #FFA500;
     background-image url('${moto}');
+    box-shadow: -10px 0px 55px 0px #111;
 `;  
 
 export const DeliveryInfo = styled.div`
-    width: 55%;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     h1, h3 {
         color: #FFA500;
         padding: 30px 0px;
+    };
+
+    P {
+        line-height: 30px;
+        font-weight: bold;
+        width: 500px;
+        color: #FFF;
+
+        &:last-child {
+            font-size: 14px;
+            padding-top: 5px;
+        };
+    };
+
+    form {
+        display: flex;
+        padding-top: 50px;
+        flex-direction: column;
+        width: 75%;
+
+        .icon {
+            background-color: transparent;
+            margin: 5px 0px;
+            padding: 5px 0px;
+            padding-left: 5px;
+            color: #FFF;
+            margin-right: -40px;
+        };
+
+        label {
+            display: flex;
+            margin: 5px 0px;
+        };
+
+        input {
+            background-color: transparent;
+            width: 100%;
+            height: 40px;
+            margin: 5px 0px;
+            padding: 0px 40px;
+            outline: 0;
+            color: #FFF;
+            border: 2px solid #FFF;
+            border-radius: 20px;
+
+            &::placeholder {
+                color: #FFF;
+            };
+
+            &:focus {
+                border: 2px solid #FFA500;
+            };
+
+            &:hover {
+                border: 2px solid #FFA500;
+            };
+        };
+
+        button {
+            width: 75%;
+            background-color: #FFA500;
+            height: 40px;
+            border-radius: 25px;
+            margin: auto;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+
+            &:hover {
+                background-color: #EE9400;
+            };
+        };
     };
 `;

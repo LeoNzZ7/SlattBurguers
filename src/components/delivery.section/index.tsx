@@ -1,3 +1,4 @@
+import { Envelope, LockKey, PhoneCall, PhoneDisconnect, User } from 'phosphor-react';
 import * as c from './styles';
 
 export const Delivery = () => {
@@ -5,7 +6,23 @@ export const Delivery = () => {
         <c.Container>
             <c.DeliveryInfo>
                 <h1>Entregadores</h1>
-                <h3>Entregue para nós</h3>
+                <p>Contamos com  um sistema de entregadores parceiros, no qual você pode hoje mesmo fazer parte preenchendo o formulário abaixo</p>
+                <form>
+                    <label>
+                        <User size={40} className='icon' />
+                        <input type='text' placeholder='Nome'/>
+                    </label>
+                    <label>
+                        <Envelope size={40} className='icon' />
+                        <input type='email' placeholder='Endereço email'/>
+                    </label>
+                    <label>
+                        <PhoneCall size={40} className='icon' />
+                        <input type='tel' placeholder='Número de telefone'/>
+                    </label>
+                    <button>Enviar</button>
+                </form>
+                <p>Após o envio do formulário em algumas horas enviaremos um e-mail para você com mais instruções</p>
             </c.DeliveryInfo>
             <c.Image>
             </c.Image>
