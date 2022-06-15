@@ -4,8 +4,7 @@ const slice = createSlice({
     name: 'logged',
     initialState: {
         status: false,
-        firstName: '',
-        lastName: '',
+        name: '',
         email: '',
         password: '',
     },
@@ -14,10 +13,7 @@ const slice = createSlice({
             state.status = action.payload;
         },
         setLoggedFirstName: (state, action) => {
-            state.firstName = action.payload;
-        },
-        setLoggedLastName: (state, action) => {
-            state.lastName = action.payload;
+            state.name = action.payload;
         },
         setLoggedEmail: (state, action) => {
             state.email = action.payload;

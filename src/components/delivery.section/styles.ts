@@ -15,14 +15,14 @@ export const Image = styled.div`
     background-position: center;
     border-left: 3px solid #FFA500;
     background-image url('${moto}');
-    box-shadow: -10px 0px 55px 0px #111;
 `;  
 
 export const DeliveryInfo = styled.div`
     width: 50%;
-    display: flex;
+    display: flex; 
     align-items: center;
     flex-direction: column;
+    justify-content: space-evenly;
 
     h1, h3 {
         color: #FFA500;
@@ -41,11 +41,19 @@ export const DeliveryInfo = styled.div`
         };
     };
 
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 75%;
+        height: 75%;
+    }
+
     form {
         display: flex;
-        padding-top: 50px;
         flex-direction: column;
-        width: 75%;
+        width: 100%;
 
         .icon {
             background-color: transparent;
@@ -59,29 +67,25 @@ export const DeliveryInfo = styled.div`
         label {
             display: flex;
             margin: 5px 0px;
-        };
-
-        input {
-            background-color: transparent;
-            width: 100%;
-            height: 40px;
-            margin: 5px 0px;
-            padding: 0px 40px;
-            outline: 0;
-            color: #FFF;
-            border: 2px solid #FFF;
-            border-radius: 20px;
-
-            &::placeholder {
+            
+            input {
+                background-color: transparent;
+                width: 100%;
+                height: 40px;
+                margin: 5px 0px;
+                padding: 0px 40px;
+                outline: 0;
                 color: #FFF;
-            };
+                border: 2px solid #FFF;
+                border-radius: 20px;
 
-            &:focus {
-                border: 2px solid #FFA500;
-            };
+                &::placeholder {
+                    color: #FFF;
+                };
 
-            &:hover {
-                border: 2px solid #FFA500;
+                &:focus {
+                    border: 2px solid #FFA500;
+                };
             };
         };
 
@@ -93,7 +97,6 @@ export const DeliveryInfo = styled.div`
             margin: auto;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 10px;
 
             &:hover {
                 background-color: #EE9400;

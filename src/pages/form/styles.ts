@@ -7,11 +7,12 @@ export const FormPage = styled.div`
 `;
 
 export const RegisterArea = styled.div<{formType: string}>`
-    background-color: ${props => props.formType === 'login' ? '#FFA500' : '#FFF'};
+    background-color: ${props => props.formType === 'login' ? '#FFA500' : '#000'};
     width: ${props => props.formType === 'login' ? '60%' : '40%'};
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    color: ${props => props.formType === 'login' ? '#000' : '#FFF'};
 
     form {
         width: 100%;
@@ -23,43 +24,50 @@ export const RegisterArea = styled.div<{formType: string}>`
 
     label {
         display: flex;
+        justify-content: end;
         width: 80%;
 
         input {
+            color: #FFF;
             width: 100%;
             height: 35px;
             outline: 0;
-            background-color: #EEE;
+            background-color: transparent;
             border: 0;
             margin: 5px 0px;
-            padding: 5px 10px;
-            border-radius: 0px 20px 20px 0px;
+            padding: 0px 40px;
+            border-radius: 20px;
+            border: 2px solid #FFF;
+
+            &:focus {
+                border: 2px solid #FFA500;
+            };
         };
 
         .icon {
-            background-color: #EEE;
-            margin: 5px 0px;
+            background-color: transparent;
+            margin: 5px -40px;
             padding: 5px 0px;
             padding-left: 5px;
             border-radius: 20px 0px 0px 20px;
+            color: #FFF;
         };
     };
 
     .inputName {
         display: flex;
-        width: 80%;
+        width: 90%;
         justify-content: center;
 
         label {
             width: 100%;
+            display: flex;
+            justify-content: center;
 
             input {
+                background-color: transparent;
                 width: 80%;
-            };
-
-            &:last-child {
-                display: flex;
-                justify-content: end;
+                margin-left: 45px;
             };
         };
     };
@@ -81,11 +89,12 @@ export const RegisterArea = styled.div<{formType: string}>`
 `;
 
 export const LoginArea = styled.div<{formType: string}>`
-    background-color: ${props => props.formType === 'login' ? '#FFF' : '#FFA500'};
+    background-color: ${props => props.formType === 'login' ? '#000' : '#FFA500'};
     width: ${props => props.formType === 'login' ? '40%' : '60%'};
     display: flex;
     justify-content: center;
     align-items: center;
+    color: ${props => props.formType === 'login' ? '#FFF' : '#000'};
 
     form {
         width: 100%;
@@ -98,24 +107,32 @@ export const LoginArea = styled.div<{formType: string}>`
     label {
         display: flex;
         width: 80%;
+        justify-content: end;
 
         input {
+            color: #FFF;
             width: 100%;
             height: 35px;
             outline: 0;
-            background-color: #EEE;
+            background-color: transparent;
             border: 0;
             margin: 5px 0px;
-            padding: 5px 10px;
-            border-radius: 0px 20px 20px 0px;
+            padding: 5px 40px;
+            border: 2px solid #FFF;
+            border-radius: 20px;
+        
+            &:focus {
+                border: 2px solid #FFA500;
+            };
         };
 
         .icon {
-            background-color: #EEE;
-            margin: 5px 0px;
+            background-color: transparent;
+            margin: 5px -40px;
             padding: 5px 0px;
             padding-left: 5px;
             border-radius: 20px 0px 0px 20px;
+            color: #FFF;
         };
     };
 

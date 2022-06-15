@@ -12,17 +12,15 @@ export const FormPage = () => {
 
     type AccountInfoType = {
         email: string,
-        firstName: string,
-        lastName?: string,
+        name: string,
         password: string
     };
 
     const [AccountData, setAccountData] = useState<AccountInfoType[]>([
-        {email: 'leonardomartinha@gmail.com', firstName: 'Leonardo', lastName: 'Nunes Martinha', password: '123'}
+        {email: 'leonardomartinha@gmail.com', name: 'Leonardo', password: '123'}
     ]);
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -34,14 +32,13 @@ export const FormPage = () => {
     const handleRegister = (e: FormEvent) => {
         e.preventDefault();
 
-        if(firstName !== '' && email !== '' && password !== '' && confirmPassword !== '') {
+        if(name !== '' && email !== '' && password !== '' && confirmPassword !== '') {
             for(let i in AccountData) {
                 if(email !== AccountData[i].email) {
                     if(password === confirmPassword) {
                         let newUser: AccountInfoType = {
                             email,
-                            firstName,
-                            lastName,
+                            name,
                             password
                         }
                         let newItem: AccountInfoType[] = [...AccountData];
@@ -88,8 +85,7 @@ export const FormPage = () => {
     const handleChangeFormType = () => {
         dispatch(setFormType(form.type === 'register' ? 'login' : 'register'));
 
-        setFirstName('');
-        setLastName('');
+        setName('');
         setEmail('');
         setPassword('');
         setConfirmPassword('');
@@ -128,16 +124,11 @@ export const FormPage = () => {
                 </c.ChangeFormType>
                 } {form.type === 'register' &&
                     <form>
-                        <div className='inputName' >
-                            <label>
-                                <User className='icon' size={35} />
-                                <input type='text' value={firstName} onChange={e => setFirstName(e.target.value)} required placeholder='Nome' />
-                            </label>
-                            <label>
-                                <User className='icon' size={35} />
-                                <input type='text' value={lastName} onChange={e => setLastName(e.target.value)} placeholder='Sobrenome' />
-                            </label>
-                        </div>
+                        <h1>Crie sua conta</h1>
+                        <label>
+                            <User className='icon' size={35} />
+                            <input type='text' value={name} onChange={e => setName(e.target.value)} required placeholder='Nome' />
+                        </label>
                         <label>
                             <Envelope className='icon' size={35} />
                             <input type='email' value={email} onChange={e => setEmail(e.target.value)} required placeholder='Email' />
