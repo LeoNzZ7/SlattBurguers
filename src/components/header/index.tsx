@@ -21,14 +21,14 @@ export const Header = () => {
                 {!logged &&
                     <ul>
                         <li><Link to='/'>Página inicial</Link></li>
-                        <li><Link to='/form'>Cárdapio</Link></li>
+                        <li><Link to='/menu'>Cárdapio</Link></li>
                         <li><Link to='/form'>Entregadores</Link></li>
                         <li><Link to='/'>Sobre</Link></li>
                     </ul>
                 } {logged &&
                     <ul>
                         <li><Link to='/'>Página inicial</Link></li>
-                        <li><Link to='/'>Cárdapio</Link></li>
+                        <li><Link to='/menu'>Cárdapio</Link></li>
                         <li><Link to='/'>Entregadores</Link></li>
                         <li><Link to='/'>Sobre</Link></li>
                     </ul>

@@ -6,8 +6,7 @@ import burgue5 from '../assets/menu/burgue5.png';
 import burgue6 from '../assets/menu/burgue6.png';
 import burgue7 from '../assets/menu/burgue7.png';
 import burgue8 from '../assets/menu/burgue8.png';
-import burgue9 from '../assets/menu/burgue9.png';
-import burgue10 from '../assets/menu/burgue10.png';
+import burgue9 from '../assets/menu/burgue10.png';
 
 type MenuItems = {
     name: string,
@@ -25,6 +24,5 @@ export const MenuItem: MenuItems[] = [
     {name: 'Slatt Bacon', description: '...', img: burgue6, price: 25},
     {name: 'Slatt Bacon', description: '...', img: burgue7, price: 25},
     {name: 'Slatt Bacon', description: '...', img: burgue8, price: 25},  
-    {name: 'Slatt Bacon', description: '...', img: burgue9, price: 25},
-    {name: 'Slatt Bacon', description: '...', img: burgue10, price: 25}
+    {name: 'Slatt Bacon', description: '...', img: burgue9, price: 25}
 ];
