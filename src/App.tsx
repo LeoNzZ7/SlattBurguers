@@ -14,7 +14,7 @@ const App = () => {
         <PrivateRoutes/>
       }
     </BrowserRouter>
-  );
+  ); 
 };
 
 export default App;

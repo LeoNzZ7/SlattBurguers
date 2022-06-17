@@ -10,6 +10,65 @@ export const Container = styled.div`
         color: #FFF;
         margin: 50px 0px;
     };
+
+    .menu-modal {
+        background-color: rgba(0, 0, 0, 0.95);
+        width: 80%;
+        height: 80%;
+        position: fixed;
+        top: 70px;
+        left: 135px;
+        border: 3px solid #FFA500;
+        border-radius: 20px;
+    
+        .modal {
+            display: flex;
+            padding: 20px;
+            height: 100%;
+
+            .modal-info {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 300px;
+                    height: 300px; 
+                };
+
+                h1 {
+                    color: #FFA500;
+                    margin: 0px;
+                    padding: 20px 0px;
+                };
+
+                p {
+                    color: #FFF;
+                    font-weight: bold;
+                }
+
+                button {
+                    width: 250px;
+                    height: 50px;
+                    border-radius: 25px;
+                    background-color: #FFA500;
+                    border: 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #EE9400;
+                    };
+                };
+
+                &:last-child {
+                    justify-content: space-between;
+                };
+            };
+        };
+    };
 `;
 
 export const Header = styled.div`
@@ -35,17 +94,36 @@ export const Header = styled.div`
             };
         };
     };
+
+    .account-menu {
+        background-color: rgba(40, 40, 40, 0.5);
+        color: #FFF;
+
+        a {
+            text-align: start;
+        };
+
+        .icon {
+            color:  #FFF;
+        };
+    };
+
+    .cart-menu {
+        background-color: rgba(40, 40, 40, 0.5);
+    
+        .icon {
+            color:  #FFF;
+        };
+    };
 `;
 
 export const MenuArea = styled.div`
     width: 90%;
     flex-wrap: wrap;
     margin: auto;
-    border: 1px solid #FFF;
     border-radius: 20px;
-    padding: 20px;
+    padding: 0px;
     display: flex;
-    align-items: end;
     justify-content: space-evenly;
 `;
 
@@ -54,11 +132,12 @@ export const MenuItem = styled.div`
     height: 350px;
     display: flex;
     justify-content: space-evenly;
-    margin: 50px 0px;
+    margin-bottom: 50px;
     border: 1px solid #FFF;
     border-radius: 25px;
     flex-direction: column;
     align-items: center;
+    padding: 0;
 
     h1 {
         padding: 0px;

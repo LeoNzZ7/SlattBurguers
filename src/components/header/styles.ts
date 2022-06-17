@@ -62,7 +62,7 @@ export const acountArea = styled.div`
         cursor: pointer;
         };
     };
-
+    
     .cart-menu {
         width: 600px;
         background-color: rgba(20, 20, 20, 0.5);

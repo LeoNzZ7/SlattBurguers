@@ -10,7 +10,7 @@ import { setFormType } from '../../redux/reducers/formTypeReducer';
 export const Header = () => {
     const logged = useAppSelector(state => state.logged.status)
     const dispatch = useDispatch();
-    
+
     return(
         <c.Container>
             <c.TitleArea>
