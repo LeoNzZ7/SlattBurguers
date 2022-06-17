@@ -9,7 +9,7 @@ import { setId, setName, setPrice, setImg } from '../../redux/reducers/newItemCa
 export const FoodMenu = () => {
     const [index, setIndex] = useState(0);
 
-    const dispatch =  useDispatch()
+    const dispatch =  useDispatch();
 
     const formatValue = (n: number) => {
         let formatedValue = n.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
@@ -18,11 +18,11 @@ export const FoodMenu = () => {
 
     const handleAddToCart = () => {
         dispatch(setId(MenuItem[index].id));
-        dispatch(setId(MenuItem[index].img));
-        dispatch(setId(MenuItem[index].name));
-        dispatch(setId(MenuItem[index].price));
+        dispatch(setImg(MenuItem[index].img));
+        dispatch(setName(MenuItem[index].name));
+        dispatch(setPrice(MenuItem[index].price));
     };
-    
+
     return(
         <c.Container>
             <c.Header>
@@ -57,7 +57,7 @@ export const FoodMenu = () => {
                                 </div>
                                 <div className='modal-info'>
                                     <h1>{formatValue(MenuItem[index].price)}</h1>
-                                    <button>Adiconar ao carrinho</button>
+                                    <button onClick={handleAddToCart} >Adiconar ao carrinho</button>
                                 </div>
                             </div>                                         
                         )}

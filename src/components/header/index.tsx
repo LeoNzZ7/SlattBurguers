@@ -6,12 +6,44 @@ import { useAppSelector } from '../../redux/hooks/useAppSelector';
 import { useDispatch } from 'react-redux';
 import { setLoggedStatus } from '../../redux/reducers/loggedReducer';
 import { setFormType } from '../../redux/reducers/formTypeReducer';
+import { useEffect, useState } from 'react';
+
+type Cart =  {
+    id: number,
+    name: string,
+    price: number,
+    img: string
+}
 
 export const Header = () => {
     const logged = useAppSelector(state => state.logged.status)
-    const dispatch = useDispatch();
+    const newItemCart = useAppSelector(state => state.NewItemCart)
+    const dispatch = useDispatch(); 
 
-    return(
+    const [cart,setCart] =  useState<Cart[]>([]) 
+
+    useEffect(() => {   
+        if(newItemCart.name !== '') {
+            let newItem: Cart = {
+                id: newItemCart.id,
+                name: newItemCart.name,
+                price: newItemCart.price,
+                img: newItemCart.img
+            };
+
+            let newCart: Cart[] = [...cart];
+            newCart.push(newItem);
+            setCart(newCart);
+        };
+
+    }, [newItemCart]);
+
+    const handleBuy = () => {
+        setCart([]);
+        alert('compra finalizada')
+    };
+
+    return( 
         <c.Container>
             <c.TitleArea>
                 <Hamburger size={47} />
@@ -42,14 +74,29 @@ export const Header = () => {
                     <Menu.Items  className='cart-menu'>
                         <Menu.Item>
                             {({active}) => (
+                                <>
                                 <table>
                                     <tr>
                                         <td>Nome</td>
                                         <td>Foto</td>
-                                        <td>Quantidade</td>
                                         <td>Valor</td>
                                     </tr>
+                                    {cart &&
+                                        cart.map((item, index) => (
+                                            <tr>
+                                                <td>{item.name !== '' ? item.name : null}</td>
+                                                <td><img src={item.img !== '' ? item.img : undefined} /></td>
+                                                <td>{item.price !== 0 ? item.price : null}</td>
+                                            </tr>   
+                                        ))
+                                    }
                                 </table>
+                                {cart.length > 0 &&
+                                    <button onClick={handleBuy} >
+                                        Finalizar Compra
+                                    </button>
+                                }
+                                </>
                             )}
                         </Menu.Item>
                     </Menu.Items>

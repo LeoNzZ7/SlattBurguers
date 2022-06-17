@@ -13,13 +13,13 @@ const slice = createSlice({
             state.id = action.payload;
         },
         setName: (state, action) => {
-            state.id = action.payload;
+            state.name = action.payload;
         },
         setPrice: (state, action) => {
-            state.id = action.payload;
+            state.price = action.payload;
         },
         setImg: (state, action) => {
-            state.id = action.payload;
+            state.img = action.payload;
         },
     }
 });

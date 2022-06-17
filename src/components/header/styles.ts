@@ -74,12 +74,13 @@ export const acountArea = styled.div`
         flex-direction: column;
         color: #FFF;
         font-weight: bold;
-        justify-content: start;
+        align-items: center;
         font-size: 20px;
         border: 3px solid #222;
         padding: 10px;
 
         table {
+
             tr {
                 border: 2px solid #222;
                 border-radius: 10px;
@@ -87,7 +88,25 @@ export const acountArea = styled.div`
                 td {
                     padding: 10px 25px;
                     width: 20%;
+
+                    img {
+                        width: 75px;
+                        height: 75px;
+                    };
                 };
+            };
+        };
+
+        button {
+            width: 200px;
+            height: 50px;
+            background-color: #FFA500;
+            cursor: pointer;
+            border-radius: 25px;
+            border: 1px solid #000;
+
+            &:hover {
+                background-color: #EE9400;
             };
         };
     };
