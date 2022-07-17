@@ -1,7 +1,7 @@
 # 🛠 Em Desenvolvimento...
-# 🍔 Slatt Burgues 
+# 🍔 Slatt Burguers 
 # 📃 Sobre o Projeto
-- Slatt Brugues é um site de venda de hambúrgueres
+- Slatt Bruguers é um site de venda de hambúrgueres
 # 💻 Layout do projeto
 ![slattburgue.gif](https://github.com/LeoNzZ7/SlattBurgues/blob/master/slattburgue.gif)
 # 🚀 Tecnologias utilizadas
